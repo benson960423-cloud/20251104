@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketch</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <style>
+      #content-frame {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+        height: 80vh;
+        border: none;
+        display: none;
+        z-index: 100;
+      }
+      #frame-close {
+        position: fixed;
+        right: 11vw;
+        top: 11vh;
+        padding: 10px 20px;
+        background: rgba(255,255,255,0.9);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: none;
+        z-index: 101;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- DOM 側邊選單：使用 CSS 控制開關，避免影響 canvas 背景繪製 -->
+    <nav id="sidebar" aria-label="側邊選單">
+      <div class="title">選單</div>
+      <ul>
+        <li data-index="0">單元一作品</li>
+        <li data-index="1">單元一筆記</li>
+        <li data-index="2">測驗系統</li>
+        <li data-index="3">淡江大學<br>教科系</li>
+        <li data-index="4">回到首頁</li>
+      </ul>
+    </nav>
+
+    <iframe id="content-frame"></iframe>
+    <button id="frame-close">關閉</button>
+    <script src="sketch.js"></script>
+    <script src="color_settings.js"></script>
+  </body>
+</html>
